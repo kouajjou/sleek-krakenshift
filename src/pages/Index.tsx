@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import { Eye } from "lucide-react";
 
 const formSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
@@ -27,7 +28,6 @@ const Index = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsLoading(true);
     try {
-      // Here you would typically handle the login logic
       console.log("Login attempt with:", values);
       toast({
         title: "Login Attempt",
@@ -45,74 +45,123 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      <div className="w-full max-w-md p-8 space-y-6 bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 shadow-2xl animate-fade-up">
-        <div className="flex justify-center mb-6">
+    <div className="min-h-screen flex">
+      {/* Left side - Illustration */}
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-purple-100 via-purple-200 to-pink-200">
+        <div className="w-full h-full flex items-center justify-center p-12">
+          <img 
+            src="/lovable-uploads/ece64c63-8dc0-4c1a-8038-9c409f712543.png" 
+            alt="Kraken Shield" 
+            className="w-full h-full object-contain"
+          />
+        </div>
+      </div>
+
+      {/* Right side - Login Form */}
+      <div className="w-full lg:w-1/2 flex flex-col">
+        {/* Header */}
+        <div className="flex justify-between items-center p-6">
           <img 
             src="https://assets.kraken.com/files/kraken-logo-light-mode.svg" 
             alt="Kraken Logo" 
-            className="h-8 w-auto"
+            className="h-8"
           />
-        </div>
-        <div className="space-y-2 text-center">
-          <h1 className="text-2xl font-bold tracking-tight text-white">Welcome back</h1>
-          <p className="text-sm text-gray-400">Sign in to your account</p>
-        </div>
-
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-white">Email</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="name@example.com"
-                      {...field}
-                      type="email"
-                      className="bg-white/5 border-white/10 text-white placeholder:text-gray-400"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="password"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-white">Password</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Enter your password"
-                      {...field}
-                      type="password"
-                      className="bg-white/5 border-white/10 text-white placeholder:text-gray-400"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <Button
-              type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-              disabled={isLoading}
+          <div className="flex items-center gap-4">
+            <button className="text-gray-600 hover:text-gray-800 flex items-center gap-2">
+              <span>🌐</span>
+              U.S. English
+            </button>
+            <Button 
+              variant="ghost" 
+              className="text-purple-600 hover:text-purple-700 hover:bg-purple-50"
             >
-              {isLoading ? "Signing in..." : "Sign in"}
+              Create Account
             </Button>
-          </form>
-        </Form>
+          </div>
+        </div>
 
-        <div className="text-center">
-          <a href="#" className="text-sm text-blue-400 hover:text-blue-300">
-            Forgot your password?
-          </a>
+        {/* Form Container */}
+        <div className="flex-1 flex items-center justify-center px-6 py-12">
+          <div className="w-full max-w-md space-y-8">
+            <div className="text-center">
+              <h1 className="text-2xl font-semibold text-gray-900">Sign in to Kraken</h1>
+            </div>
+
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          placeholder="Email or username"
+                          {...field}
+                          className="h-12 bg-gray-50 border-gray-200"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="password"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <div className="relative">
+                          <Input
+                            placeholder="Password"
+                            type="password"
+                            {...field}
+                            className="h-12 bg-gray-50 border-gray-200"
+                          />
+                          <button
+                            type="button"
+                            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+                          >
+                            <Eye className="h-5 w-5" />
+                          </button>
+                        </div>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-600">Forgot</span>
+                  <div className="space-x-1">
+                    <a href="#" className="text-purple-600 hover:text-purple-700">password</a>
+                    <span className="text-gray-600">or</span>
+                    <a href="#" className="text-purple-600 hover:text-purple-700">username</a>
+                    <span className="text-gray-600">?</span>
+                  </div>
+                </div>
+
+                <Button
+                  type="submit"
+                  className="w-full h-12 bg-purple-500 hover:bg-purple-600 text-white font-medium"
+                  disabled={isLoading}
+                >
+                  Continue
+                </Button>
+              </form>
+            </Form>
+
+            <div className="text-center text-sm">
+              <span className="text-gray-600">Need help? </span>
+              <a href="#" className="text-purple-600 hover:text-purple-700">Contact Support</a>
+            </div>
+
+            <div className="flex justify-center space-x-4 text-sm text-gray-500">
+              <a href="#" className="hover:text-gray-700">Privacy Notice</a>
+              <a href="#" className="hover:text-gray-700">Terms of Service</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
