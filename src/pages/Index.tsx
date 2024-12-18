@@ -47,6 +47,13 @@ const Index = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="w-full max-w-md p-8 space-y-6 bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 shadow-2xl animate-fade-up">
+        <div className="flex justify-center mb-6">
+          <img 
+            src="https://assets.kraken.com/files/kraken-logo-light-mode.svg" 
+            alt="Kraken Logo" 
+            className="h-8 w-auto"
+          />
+        </div>
         <div className="space-y-2 text-center">
           <h1 className="text-2xl font-bold tracking-tight text-white">Welcome back</h1>
           <p className="text-sm text-gray-400">Sign in to your account</p>
