@@ -13,7 +13,7 @@ export const CryptoGrid = () => {
         <h2 className="text-3xl font-bold text-center mb-12">
           Bâtissez votre portefeuille crypto
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cryptos.map((crypto, index) => (
             <div key={index} className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-center gap-4 mb-4">

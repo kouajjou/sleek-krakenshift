@@ -7,15 +7,15 @@ export const TradingInterface = () => {
         </h2>
         <div className="relative">
           <img 
-            src="/lovable-uploads/fd2600b6-0582-4e09-9c95-f18521d83cf9.png"
-            alt="Interface de trading Kraken"
+            src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&fit=crop&w=1200&q=80"
+            alt="Interface de trading"
             className="w-full h-auto rounded-lg shadow-2xl"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#1A1F2C] to-transparent opacity-20"></div>
         </div>
         <div className="mt-8 text-center">
           <p className="text-lg text-gray-300 mb-6">
-            Le tout sur une interface puissante.
+            Le tout sur une interface puissante et intuitive.
           </p>
         </div>
       </div>
