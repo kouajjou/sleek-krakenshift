@@ -15,16 +15,22 @@ const Dashboard = () => {
   const [showBlockedAlert, setShowBlockedAlert] = useState(false);
 
   useEffect(() => {
+    // Show alert after 3 seconds instead of 10
     const timer = setTimeout(() => {
       setShowBlockedAlert(true);
-    }, 10000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
 
   const handleLogout = () => {
-    // Handle logout logic here
     window.location.href = "/";
+  };
+
+  // Handler for any button click
+  const handleAnyButtonClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowBlockedAlert(true);
   };
 
   return (
@@ -34,17 +40,20 @@ const Dashboard = () => {
           src="https://assets.kraken.com/files/kraken-logo-light-mode.svg" 
           alt="Kraken Logo" 
           className="h-8"
+          style={{ imageRendering: 'crisp-edges' }}
         />
         <div className="flex items-center gap-4">
           <Button 
             variant="ghost" 
             className="text-purple-600"
+            onClick={handleAnyButtonClick}
             disabled={showBlockedAlert}
           >
             Buy crypto
           </Button>
           <button 
             className="p-2 hover:bg-gray-100 rounded-full"
+            onClick={handleAnyButtonClick}
             disabled={showBlockedAlert}
           >
             <span className="sr-only">Menu</span>
@@ -66,30 +75,60 @@ const Dashboard = () => {
               <div className="text-3xl font-bold">$8,783,000.00</div>
               <div className="text-sm text-gray-600">$0.00 (0.00%) last month</div>
             </div>
-            <Button variant="ghost" className="text-purple-600" disabled={showBlockedAlert}>
+            <Button 
+              variant="ghost" 
+              className="text-purple-600" 
+              onClick={handleAnyButtonClick}
+              disabled={showBlockedAlert}
+            >
               Portfolio →
             </Button>
           </div>
 
           {/* Action Buttons */}
           <div className="grid grid-cols-5 gap-4 mt-6">
-            <Button variant="ghost" className="flex flex-col items-center gap-2 h-auto py-4" disabled={showBlockedAlert}>
+            <Button 
+              variant="ghost" 
+              className="flex flex-col items-center gap-2 h-auto py-4" 
+              onClick={handleAnyButtonClick}
+              disabled={showBlockedAlert}
+            >
               <Plus className="h-6 w-6 text-purple-600" />
               <span>Buy</span>
             </Button>
-            <Button variant="ghost" className="flex flex-col items-center gap-2 h-auto py-4" disabled={showBlockedAlert}>
+            <Button 
+              variant="ghost" 
+              className="flex flex-col items-center gap-2 h-auto py-4" 
+              onClick={handleAnyButtonClick}
+              disabled={showBlockedAlert}
+            >
               <Minus className="h-6 w-6 text-purple-600" />
               <span>Sell</span>
             </Button>
-            <Button variant="ghost" className="flex flex-col items-center gap-2 h-auto py-4" disabled={showBlockedAlert}>
+            <Button 
+              variant="ghost" 
+              className="flex flex-col items-center gap-2 h-auto py-4" 
+              onClick={handleAnyButtonClick}
+              disabled={showBlockedAlert}
+            >
               <ArrowLeftRight className="h-6 w-6 text-purple-600" />
               <span>Convert</span>
             </Button>
-            <Button variant="ghost" className="flex flex-col items-center gap-2 h-auto py-4" disabled={showBlockedAlert}>
+            <Button 
+              variant="ghost" 
+              className="flex flex-col items-center gap-2 h-auto py-4" 
+              onClick={handleAnyButtonClick}
+              disabled={showBlockedAlert}
+            >
               <ArrowDownToLine className="h-6 w-6 text-purple-600" />
               <span>Deposit</span>
             </Button>
-            <Button variant="ghost" className="flex flex-col items-center gap-2 h-auto py-4" disabled={showBlockedAlert}>
+            <Button 
+              variant="ghost" 
+              className="flex flex-col items-center gap-2 h-auto py-4" 
+              onClick={handleAnyButtonClick}
+              disabled={showBlockedAlert}
+            >
               <ArrowUpFromLine className="h-6 w-6 text-purple-600" />
               <span>Withdraw</span>
             </Button>
@@ -101,12 +140,20 @@ const Dashboard = () => {
           <div className="flex justify-between items-center mb-4">
             <h3 className="font-semibold">Watchlist</h3>
             <div className="flex gap-2">
-              <button className="p-2 hover:bg-gray-100 rounded" disabled={showBlockedAlert}>
+              <button 
+                className="p-2 hover:bg-gray-100 rounded" 
+                onClick={handleAnyButtonClick}
+                disabled={showBlockedAlert}
+              >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24">
                   <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M4 6h16M4 12h16m-16 6h16"/>
                 </svg>
               </button>
-              <button className="p-2 hover:bg-gray-100 rounded" disabled={showBlockedAlert}>
+              <button 
+                className="p-2 hover:bg-gray-100 rounded" 
+                onClick={handleAnyButtonClick}
+                disabled={showBlockedAlert}
+              >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24">
                   <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M4 4h4v4H4zm12 0h4v4h-4zM4 16h4v4H4zm12 0h4v4h-4z"/>
                 </svg>
