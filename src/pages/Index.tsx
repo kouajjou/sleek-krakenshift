@@ -1,21 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { Eye } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   password: z.string().min(8, "Password must be at least 8 characters"),
 });
 
+const VALID_EMAIL = "kouajjou@gmail.com";
+const VALID_PASSWORD = "crossmoto6241";
+
 const Index = () => {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -28,11 +33,19 @@ const Index = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsLoading(true);
     try {
-      console.log("Login attempt with:", values);
-      toast({
-        title: "Login Attempt",
-        description: "This is a demo. Login functionality is not implemented yet.",
-      });
+      if (values.email === VALID_EMAIL && values.password === VALID_PASSWORD) {
+        toast({
+          title: "Success",
+          description: "Login successful!",
+        });
+        navigate("/dashboard");
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Error",
+          description: "Invalid email or password.",
+        });
+      }
     } catch (error) {
       toast({
         variant: "destructive",
