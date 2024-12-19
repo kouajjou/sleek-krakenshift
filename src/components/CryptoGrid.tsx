@@ -1,10 +1,9 @@
-import { Bitcoin, Ethereum, Litecoin, DollarSign } from "lucide-react";
+import { Bitcoin, Coins, DollarSign } from "lucide-react";
 
 const cryptos = [
   { name: "Bitcoin", symbol: "BTC", icon: Bitcoin, price: "43,524.20", change: "+2.34%" },
-  { name: "Ethereum", symbol: "ETH", icon: Ethereum, price: "2,245.15", change: "+1.89%" },
-  { name: "Litecoin", symbol: "LTC", icon: Litecoin, price: "152.48", change: "-0.45%" },
-  // ... plus de cryptos peuvent être ajoutées
+  { name: "Ethereum", symbol: "ETH", icon: Coins, price: "2,245.15", change: "+1.89%" },
+  { name: "Litecoin", symbol: "LTC", icon: DollarSign, price: "152.48", change: "-0.45%" },
 ];
 
 export const CryptoGrid = () => {
