@@ -1,10 +1,30 @@
 import { Plus, Minus, ArrowLeftRight, ArrowDownToLine, ArrowUpFromLine } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 const Dashboard = () => {
+  const [showBlockedAlert, setShowBlockedAlert] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowBlockedAlert(true);
+    }, 10000); // 10 secondes
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-[#F7F7FF]">
-      {/* Header */}
+    <>
+      <div className="min-h-screen bg-[#F7F7FF]">
       <header className="flex justify-between items-center px-6 py-4 bg-white border-b">
         <img 
           src="https://assets.kraken.com/files/kraken-logo-light-mode.svg" 
@@ -24,8 +44,8 @@ const Dashboard = () => {
         </div>
       </header>
 
-      {/* Main Content */}
-      <div className="p-6">
+        {/* Main Content */}
+        <div className="p-6">
         <h1 className="text-4xl font-bold text-purple-600 mb-8">Good afternoon</h1>
 
         {/* Verification Card */}
@@ -135,7 +155,29 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-    </div>
+        </div>
+      </div>
+
+      <AlertDialog open={showBlockedAlert} onOpenChange={setShowBlockedAlert}>
+        <AlertDialogContent className="bg-[#1A1F2C] border-[#6E59A5]">
+          <AlertDialogHeader>
+            <AlertDialogTitle className="text-[#F1F1F1] text-xl">
+              Compte Bloqué / Account Blocked
+            </AlertDialogTitle>
+            <AlertDialogDescription className="text-[#F1F1F1] text-base">
+              Votre compte est bloqué. Veuillez contacter le support pour débloquer votre compte.
+              <br /><br />
+              Your account is blocked. Please contact support to unlock your account.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction className="bg-[#9b87f5] hover:bg-[#7E69AB] text-white">
+              OK
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </>
   );
 };
 
