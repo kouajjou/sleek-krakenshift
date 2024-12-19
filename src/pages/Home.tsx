@@ -1,146 +1,223 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white font-inter">
       {/* Header */}
-      <header className="flex justify-between items-center px-6 py-4">
-        <img 
-          src="https://assets.kraken.com/files/kraken-logo-light-mode.svg" 
-          alt="Kraken Logo" 
-          className="h-8"
-        />
-        <div className="flex items-center gap-6">
-          <Button 
-            variant="ghost" 
-            className="text-gray-600 hover:text-gray-800"
-            onClick={() => navigate('/login')}
-          >
-            Connexion
-          </Button>
-          <Button className="bg-purple-600 hover:bg-purple-700">
-            Commencer
-          </Button>
+      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div className="max-w-[1440px] mx-auto px-6 py-4">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center gap-8">
+              <img 
+                src="https://assets.kraken.com/files/kraken-logo-light-mode.svg" 
+                alt="Kraken Logo" 
+                className="h-8"
+              />
+              <nav className="hidden lg:flex items-center gap-6">
+                <button className="text-gray-600 hover:text-gray-900 flex items-center gap-1">
+                  Buy Crypto <ChevronDown className="h-4 w-4" />
+                </button>
+                <button className="text-gray-600 hover:text-gray-900 flex items-center gap-1">
+                  Trade <ChevronDown className="h-4 w-4" />
+                </button>
+                <button className="text-gray-600 hover:text-gray-900 flex items-center gap-1">
+                  Earn <ChevronDown className="h-4 w-4" />
+                </button>
+                <button className="text-gray-600 hover:text-gray-900 flex items-center gap-1">
+                  Learn <ChevronDown className="h-4 w-4" />
+                </button>
+              </nav>
+            </div>
+            <div className="flex items-center gap-4">
+              <button className="text-gray-600 hover:text-gray-800 flex items-center gap-2">
+                <span>🌐</span>
+                FR
+              </button>
+              <Button 
+                variant="ghost" 
+                className="text-purple-600 hover:text-purple-700 hover:bg-purple-50"
+                onClick={() => navigate('/login')}
+              >
+                Connexion
+              </Button>
+              <Button className="bg-purple-600 hover:bg-purple-700 hidden sm:flex">
+                Créer un compte
+              </Button>
+            </div>
+          </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="px-6 py-16 max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          <div className="flex-1">
-            <h1 className="text-5xl font-bold mb-6">
-              Investissez dans votre avenir
-            </h1>
-            <p className="text-gray-600 text-lg mb-8">
-              Plus de 10 millions d'utilisateurs ont échangé plus de 207 milliards de dollars sur Kraken, une plateforme d'échange de crypto sécurisée à haut volume.
-            </p>
-            <Button className="bg-purple-600 hover:bg-purple-700 h-12 px-8 text-lg">
-              Commencer maintenant <ArrowRight className="ml-2" />
-            </Button>
-          </div>
-          <div className="flex-1">
-            <img 
-              src="/lovable-uploads/bb4d0ee0-e1b8-49d9-9a4b-52b334d04de9.png"
-              alt="Kraken App Preview"
-              className="w-full h-auto"
-            />
+      <section className="pt-32 px-6 pb-16">
+        <div className="max-w-[1440px] mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="flex-1 max-w-2xl">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Achetez, vendez et échangez des crypto-monnaies
+              </h1>
+              <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                Rejoignez des millions d'utilisateurs qui font confiance à Kraken pour acheter, vendre et échanger plus de 200 crypto-monnaies.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button className="bg-purple-600 hover:bg-purple-700 h-12 px-8 text-lg">
+                  Créer un compte <ArrowRight className="ml-2" />
+                </Button>
+                <Button variant="outline" className="h-12 px-8 text-lg border-2">
+                  Voir les prix
+                </Button>
+              </div>
+            </div>
+            <div className="flex-1">
+              <img 
+                src="/lovable-uploads/bb4d0ee0-e1b8-49d9-9a4b-52b334d04de9.png"
+                alt="Kraken Trading Platform"
+                className="w-full h-auto rounded-lg shadow-2xl"
+                style={{
+                  imageRendering: '-webkit-optimize-contrast',
+                  transform: 'translateZ(0)',
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
       <section className="bg-purple-50 py-16">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-[1440px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-2xl font-bold mb-2">+ de 10 Min</div>
-              <p className="text-gray-600">Utilisateurs actifs</p>
+            <div className="p-6 rounded-lg bg-white/50 backdrop-blur-sm">
+              <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                200+
+              </div>
+              <p className="text-gray-600">Crypto-monnaies disponibles</p>
             </div>
-            <div>
-              <div className="text-2xl font-bold mb-2">+ de 90</div>
-              <p className="text-gray-600">Cryptomonnaies disponibles</p>
+            <div className="p-6 rounded-lg bg-white/50 backdrop-blur-sm">
+              <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                9M+
+              </div>
+              <p className="text-gray-600">Clients satisfaits</p>
             </div>
-            <div>
-              <div className="text-2xl font-bold mb-2">+ de 207 Mrd $</div>
-              <p className="text-gray-600">Volume d'échange</p>
+            <div className="p-6 rounded-lg bg-white/50 backdrop-blur-sm">
+              <div className="text-3xl font-bold mb-2 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                190
+              </div>
+              <p className="text-gray-600">Pays supportés</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">Pourquoi Kraken ?</h2>
+      <section className="py-16 bg-white">
+        <div className="max-w-[1440px] mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">Pourquoi choisir Kraken ?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
+            <div className="text-center p-6">
               <div className="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <svg className="w-8 h-8 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>
-              <h3 className="font-semibold mb-2">Sécurité</h3>
-              <p className="text-gray-600">Protection de pointe et conformité réglementaire</p>
+              <h3 className="text-xl font-semibold mb-2">Sécurité de premier ordre</h3>
+              <p className="text-gray-600">Protection avancée de vos actifs et données personnelles</p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <svg className="w-8 h-8 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
-                </svg>
-              </div>
-              <h3 className="font-semibold mb-2">Support 24/7</h3>
-              <p className="text-gray-600">Une équipe d'experts à votre service</p>
-            </div>
-            <div className="text-center">
+            <div className="text-center p-6">
               <div className="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <svg className="w-8 h-8 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="font-semibold mb-2">Frais bas</h3>
-              <p className="text-gray-600">Des frais compétitifs pour tous les traders</p>
+              <h3 className="text-xl font-semibold mb-2">Frais compétitifs</h3>
+              <p className="text-gray-600">Des frais parmi les plus bas du marché</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <svg className="w-8 h-8 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Exécution rapide</h3>
+              <p className="text-gray-600">Transactions instantanées et interface réactive</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Crypto Grid */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">Gagnez des récompenses sur votre crypto</h2>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-            {[
-              "Bitcoin", "Ethereum", "Solana", "Polkadot", "Cardano", "USDT",
-              "USDC", "Dogecoin", "Chainlink", "Polygon", "Avalanche", "Cosmos",
-              "Algorand", "Tezos", "Stellar", "XRP", "Litecoin", "Monero"
-            ].map((crypto, index) => (
-              <div key={index} className="flex items-center gap-2 p-3 bg-white rounded-lg border hover:shadow-md transition-shadow">
-                <div className="w-8 h-8 bg-gray-200 rounded-full"></div>
-                <span className="font-medium text-sm">{crypto}</span>
-              </div>
-            ))}
+      {/* Trading Platform Preview */}
+      <section className="py-16 bg-[#1A1F2C] text-white">
+        <div className="max-w-[1440px] mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Une plateforme de trading complète et intuitive
+          </h2>
+          <div className="relative">
+            <img 
+              src="/lovable-uploads/bb4d0ee0-e1b8-49d9-9a4b-52b334d04de9.png"
+              alt="Kraken Trading Interface"
+              className="w-full h-auto rounded-lg shadow-2xl"
+              style={{
+                imageRendering: '-webkit-optimize-contrast',
+                transform: 'translateZ(0)',
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1A1F2C] to-transparent opacity-20"></div>
           </div>
         </div>
       </section>
 
-      {/* Trading Platform Section */}
-      <section className="py-16 bg-[#1A1F2C] text-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Accédez au trading spot et avec marge, <br />
-            le tout sur une seule plateforme
-          </h2>
-          <img 
-            src="/lovable-uploads/bb4d0ee0-e1b8-49d9-9a4b-52b334d04de9.png"
-            alt="Trading Platform"
-            className="w-full rounded-lg shadow-2xl"
-          />
+      {/* Footer */}
+      <footer className="bg-gray-50 py-12">
+        <div className="max-w-[1440px] mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <div>
+              <h4 className="font-semibold mb-4">À propos</h4>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-600 hover:text-gray-900">À propos de Kraken</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-gray-900">Pourquoi Kraken</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-gray-900">Carrières</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Produits</h4>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-600 hover:text-gray-900">Bitcoin</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-gray-900">Ethereum</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-gray-900">Staking</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Support</h4>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-600 hover:text-gray-900">Centre d'aide</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-gray-900">Contact</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-gray-900">Status</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="flex items-center gap-4">
+                <img 
+                  src="https://assets.kraken.com/files/kraken-logo-light-mode.svg" 
+                  alt="Kraken Logo" 
+                  className="h-6"
+                />
+                <span className="text-sm text-gray-600">© 2024 Kraken</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <a href="#" className="text-sm text-gray-600 hover:text-gray-900">Confidentialité</a>
+                <a href="#" className="text-sm text-gray-600 hover:text-gray-900">Conditions d'utilisation</a>
+                <a href="#" className="text-sm text-gray-600 hover:text-gray-900">Sécurité</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </footer>
     </div>
   );
 };
