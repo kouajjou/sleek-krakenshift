@@ -69,7 +69,6 @@ export const Header = () => {
           </div>
         </div>
         
-        {/* Mobile menu */}
         {isMenuOpen && (
           <div className="lg:hidden py-4">
             <nav className="flex flex-col gap-4">
