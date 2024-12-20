@@ -15,7 +15,8 @@ export const Header = () => {
             <img 
               src="/kraken-logo.svg" 
               alt="Kraken Logo" 
-              className="h-8"
+              className="h-8 w-auto"
+              style={{ filter: 'brightness(0) invert(1)' }}
             />
             <nav className="hidden lg:flex items-center gap-6">
               <button className="text-white hover:text-white/90 flex items-center gap-1">
