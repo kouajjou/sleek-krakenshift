@@ -13,7 +13,7 @@ export const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-8">
             <img 
-              src="/_next/static/images/kraken-logo-BDS-5b36ef70e12e0a05266fabe73dedaa63.png" 
+              src="/kraken-logo-white.png"
               alt="Kraken Logo" 
               className="h-8 w-auto"
             />
