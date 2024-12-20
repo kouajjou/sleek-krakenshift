@@ -11,7 +11,7 @@ export const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-8">
             <img 
-              src="https://www.kraken.com/_assets/images/logo/kraken-logo-light-mode.svg" 
+              src="/kraken-logo.svg" 
               alt="Kraken Logo" 
               className="h-8"
               style={{
