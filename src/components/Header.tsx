@@ -13,7 +13,7 @@ export const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-8">
             <img 
-              src="kraken-logo-white.png"
+              src="/lovable-uploads/c9707dce-9214-467d-9c98-2cc73d75d2c0.png"
               alt="Kraken Logo" 
               className="h-8 w-auto"
               onError={(e) => console.error('Error loading image:', e)}
