@@ -13,9 +13,10 @@ export const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-8">
             <img 
-              src="/kraken-logo-white.png"
+              src="kraken-logo-white.png"
               alt="Kraken Logo" 
               className="h-8 w-auto"
+              onError={(e) => console.error('Error loading image:', e)}
             />
             <nav className="hidden lg:flex items-center gap-6">
               <button className="text-white hover:text-white/90 flex items-center gap-1">
