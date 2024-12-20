@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 
 export const HeroSection = () => {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-[#F8F9FF] to-[#F3EFFF] pt-20">
+    <div className="relative min-h-screen bg-[#F8F9FF] pt-20">
       <div className="container mx-auto px-4 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
