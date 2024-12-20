@@ -8,7 +8,7 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-[#5D31E4] z-50">
+    <header className="fixed top-0 left-0 right-0 bg-[#5D4AAF] z-50">
       <div className="max-w-[1440px] mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-8">
@@ -54,7 +54,7 @@ export const Header = () => {
               Connexion
             </Button>
             <Button 
-              className="bg-white hover:bg-white/90 text-[#5D31E4]"
+              className="bg-white hover:bg-white/90 text-[#5D4AAF]"
             >
               Inscription
             </Button>
@@ -93,7 +93,7 @@ export const Header = () => {
                 <ChevronDown className="h-4 w-4" />
               </button>
               <Button 
-                className="bg-white hover:bg-white/90 text-[#5D31E4] w-full"
+                className="bg-white hover:bg-white/90 text-[#5D4AAF] w-full"
               >
                 Inscription
               </Button>

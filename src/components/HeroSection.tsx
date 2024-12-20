@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 
 export const HeroSection = () => {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-[#5D31E4] to-[#8B31E4] pt-20">
+    <div className="relative min-h-screen bg-gradient-to-br from-[#5D4AAF] to-[#7E69AB] pt-20">
       <div className="container mx-auto px-4 py-32">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -19,7 +19,7 @@ export const HeroSection = () => {
               placeholder="satoshi@email.com"
               className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
             />
-            <Button className="bg-[#8957FF] hover:bg-[#9B6FFF] text-white">
+            <Button className="bg-[#6E59A5] hover:bg-[#8957FF] text-white">
               Inscription
             </Button>
           </div>
