@@ -1,4 +1,4 @@
-import { Twitter, Facebook, LinkedIn, Instagram, Youtube, ChevronDown } from "lucide-react";
+import { Twitter, Facebook, Linkedin, Instagram, Youtube, ChevronDown } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -22,7 +22,7 @@ export const Footer = () => {
                 <Facebook className="w-5 h-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <LinkedIn className="w-5 h-5" />
+                <Linkedin className="w-5 h-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />
