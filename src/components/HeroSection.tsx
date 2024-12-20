@@ -24,7 +24,7 @@ export const HeroSection = () => {
             </Button>
           </div>
           <div className="mt-8 flex items-center justify-center gap-2">
-            <img src="/qr-code.png" alt="QR Code" className="w-8 h-8" />
+            <img src="/lovable-uploads/245da50d-fe95-4a5f-a520-a1dc1320197f.png" alt="QR Code" className="w-8 h-8" />
             <span className="text-white">Téléchargez l'application Kraken</span>
           </div>
           <p className="text-white/60 text-sm mt-8">
