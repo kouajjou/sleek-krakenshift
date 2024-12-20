@@ -8,7 +8,7 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white z-50 border-b border-gray-200">
+    <header className="fixed top-0 left-0 right-0 bg-[#5D31E4] z-50">
       <div className="max-w-[1440px] mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-8">
@@ -18,49 +18,49 @@ export const Header = () => {
               className="h-8"
             />
             <nav className="hidden lg:flex items-center gap-6">
-              <button className="text-gray-700 hover:text-gray-900 flex items-center gap-1">
+              <button className="text-white hover:text-white/90 flex items-center gap-1">
                 Explorer
                 <ChevronDown className="h-4 w-4" />
               </button>
-              <button className="text-gray-700 hover:text-gray-900 flex items-center gap-1">
+              <button className="text-white hover:text-white/90 flex items-center gap-1">
                 Prix
                 <ChevronDown className="h-4 w-4" />
               </button>
-              <button className="text-gray-700 hover:text-gray-900 flex items-center gap-1">
+              <button className="text-white hover:text-white/90 flex items-center gap-1">
                 Pourquoi Kraken ?
                 <ChevronDown className="h-4 w-4" />
               </button>
-              <button className="text-gray-700 hover:text-gray-900 flex items-center gap-1">
+              <button className="text-white hover:text-white/90 flex items-center gap-1">
                 Apprendre
                 <ChevronDown className="h-4 w-4" />
               </button>
-              <button className="text-gray-700 hover:text-gray-900 flex items-center gap-1">
+              <button className="text-white hover:text-white/90 flex items-center gap-1">
                 Support
                 <ChevronDown className="h-4 w-4" />
               </button>
             </nav>
           </div>
           <div className="flex items-center gap-4">
-            <button className="text-gray-700 hover:text-gray-900 flex items-center gap-2">
+            <button className="text-white hover:text-white/90 flex items-center gap-2">
               <span>🌐</span>
               FR
               <ChevronDown className="h-4 w-4" />
             </button>
             <Button 
               variant="ghost" 
-              className="text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+              className="text-white hover:text-white/90 hover:bg-white/10"
               onClick={() => navigate('/login')}
             >
               Connexion
             </Button>
             <Button 
-              className="bg-[#5D4AAF] hover:bg-[#4D3A9F] text-white hidden md:inline-flex"
+              className="bg-white hover:bg-white/90 text-[#5D31E4]"
             >
               Inscription
             </Button>
             <Button
               variant="ghost"
-              className="lg:hidden"
+              className="lg:hidden text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <Menu className="h-6 w-6" />
@@ -72,28 +72,28 @@ export const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden py-4">
             <nav className="flex flex-col gap-4">
-              <button className="text-gray-700 hover:text-gray-900 flex items-center gap-1">
+              <button className="text-white hover:text-white/90 flex items-center gap-1">
                 Explorer
                 <ChevronDown className="h-4 w-4" />
               </button>
-              <button className="text-gray-700 hover:text-gray-900 flex items-center gap-1">
+              <button className="text-white hover:text-white/90 flex items-center gap-1">
                 Prix
                 <ChevronDown className="h-4 w-4" />
               </button>
-              <button className="text-gray-700 hover:text-gray-900 flex items-center gap-1">
+              <button className="text-white hover:text-white/90 flex items-center gap-1">
                 Pourquoi Kraken ?
                 <ChevronDown className="h-4 w-4" />
               </button>
-              <button className="text-gray-700 hover:text-gray-900 flex items-center gap-1">
+              <button className="text-white hover:text-white/90 flex items-center gap-1">
                 Apprendre
                 <ChevronDown className="h-4 w-4" />
               </button>
-              <button className="text-gray-700 hover:text-gray-900 flex items-center gap-1">
+              <button className="text-white hover:text-white/90 flex items-center gap-1">
                 Support
                 <ChevronDown className="h-4 w-4" />
               </button>
               <Button 
-                className="bg-[#5D4AAF] hover:bg-[#4D3A9F] text-white w-full"
+                className="bg-white hover:bg-white/90 text-[#5D31E4] w-full"
               >
                 Inscription
               </Button>
