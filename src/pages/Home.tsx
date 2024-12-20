@@ -1,20 +1,16 @@
 import { Header } from "@/components/Header";
-import { MainHero } from "@/components/MainHero";
+import { HeroSection } from "@/components/HeroSection";
 import { StatsSection } from "@/components/StatsSection";
-import { CryptoGrid } from "@/components/CryptoGrid";
-import { FeaturesGrid } from "@/components/FeaturesGrid";
-import { TradingInterface } from "@/components/TradingInterface";
+import { QuickStartSection } from "@/components/QuickStartSection";
 import { Footer } from "@/components/Footer";
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <MainHero />
+      <HeroSection />
       <StatsSection />
-      <CryptoGrid />
-      <FeaturesGrid />
-      <TradingInterface />
+      <QuickStartSection />
       <Footer />
     </div>
   );

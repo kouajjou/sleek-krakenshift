@@ -1,64 +1,35 @@
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export const HeroSection = () => {
   return (
-    <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#5D4AAF] via-[#6366F1] to-[#8B5CF6]">
-      <div 
-        className="absolute inset-0 bg-[url('/lovable-uploads/ece64c63-8dc0-4c1a-8038-9c409f712543.png')] bg-cover bg-center opacity-10"
-        style={{
-          willChange: 'transform',
-          backfaceVisibility: 'hidden',
-          perspective: '1000px',
-          transform: 'translate3d(0, 0, 0)',
-        }}
-      />
-      <div className="container mx-auto px-4 py-32 relative z-10">
+    <div className="relative min-h-screen bg-gradient-to-br from-[#5D4AAF] to-[#6366F1] pt-20">
+      <div className="container mx-auto px-4 py-32">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 
-            className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-up tracking-tight"
-            style={{ 
-              textRendering: 'geometricPrecision',
-              WebkitFontSmoothing: 'antialiased',
-              fontFeatureSettings: '"kern" 1',
-            }}
-          >
-            Achetez, vendez et échangez des crypto-monnaies
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Investissez dans votre avenir
           </h1>
-          <p 
-            className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-up [animation-delay:200ms] tracking-normal"
-            style={{ 
-              textRendering: 'geometricPrecision',
-              WebkitFontSmoothing: 'antialiased',
-              fontFeatureSettings: '"kern" 1',
-            }}
-          >
-            La plateforme la plus sécurisée pour acheter et vendre des cryptomonnaies
+          <p className="text-xl text-white/90 mb-8">
+            Des millions d'investisseurs en crypto-monnaie font confiance à Kraken, 
+            <span className="font-bold"> la meilleure plateforme crypto.*</span>
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up [animation-delay:400ms]">
-            <Button 
-              size="lg" 
-              className="bg-white text-primary hover:bg-white/90 font-semibold tracking-wide shadow-lg"
-              style={{ 
-                WebkitFontSmoothing: 'antialiased',
-                transform: 'translate3d(0, 0, 0)',
-                willChange: 'transform',
-              }}
-            >
-              Commencer
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="text-white border-white hover:bg-white/10 font-semibold tracking-wide"
-              style={{ 
-                WebkitFontSmoothing: 'antialiased',
-                transform: 'translate3d(0, 0, 0)',
-                willChange: 'transform',
-              }}
-            >
-              En savoir plus
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <Input 
+              type="email" 
+              placeholder="satoshi@email.com"
+              className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
+            />
+            <Button className="bg-white text-[#5D4AAF] hover:bg-white/90">
+              Inscription
             </Button>
           </div>
+          <div className="mt-8 flex items-center justify-center gap-2">
+            <img src="/qr-code.png" alt="QR Code" className="w-8 h-8" />
+            <span className="text-white">Téléchargez l'application Kraken</span>
+          </div>
+          <p className="text-white/60 text-sm mt-8">
+            *Sur la base d'une évaluation des plateformes crypto de Forbes Advisor en septembre 2024.
+          </p>
         </div>
       </div>
     </div>

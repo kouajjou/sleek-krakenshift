@@ -6,7 +6,7 @@ export const Header = () => {
   const navigate = useNavigate();
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 bg-[#5D4AAF] z-50">
       <div className="max-w-[1440px] mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-8">
@@ -14,47 +14,41 @@ export const Header = () => {
               src="/kraken-logo.svg" 
               alt="Kraken Logo" 
               className="h-8"
-              style={{
-                imageRendering: '-webkit-optimize-contrast',
-                transform: 'translateZ(0)',
-                backfaceVisibility: 'hidden',
-              }}
             />
             <nav className="hidden lg:flex items-center gap-6">
-              <button className="text-gray-600 hover:text-gray-900 flex items-center gap-1">
-                Buy Crypto <ChevronDown className="h-4 w-4" />
+              <button className="text-white hover:text-white/90 flex items-center gap-1">
+                Explorer
               </button>
-              <button className="text-gray-600 hover:text-gray-900 flex items-center gap-1">
-                Trade <ChevronDown className="h-4 w-4" />
+              <button className="text-white hover:text-white/90 flex items-center gap-1">
+                Prix
               </button>
-              <button className="text-gray-600 hover:text-gray-900 flex items-center gap-1">
-                Earn <ChevronDown className="h-4 w-4" />
+              <button className="text-white hover:text-white/90 flex items-center gap-1">
+                Pourquoi Kraken ?
               </button>
-              <button className="text-gray-600 hover:text-gray-900 flex items-center gap-1">
-                Learn <ChevronDown className="h-4 w-4" />
+              <button className="text-white hover:text-white/90 flex items-center gap-1">
+                Apprendre
+              </button>
+              <button className="text-white hover:text-white/90 flex items-center gap-1">
+                Support
               </button>
             </nav>
           </div>
           <div className="flex items-center gap-4">
-            <button className="text-gray-600 hover:text-gray-800 flex items-center gap-2">
+            <button className="text-white hover:text-white/90 flex items-center gap-2">
               <span>🌐</span>
               FR
             </button>
             <Button 
               variant="ghost" 
-              className="text-purple-600 hover:text-purple-700 hover:bg-purple-50"
+              className="text-white hover:text-white/90 hover:bg-white/10"
               onClick={() => navigate('/login')}
             >
               Connexion
             </Button>
             <Button 
-              className="bg-purple-600 hover:bg-purple-700 hidden sm:flex"
-              style={{
-                transform: 'translateZ(0)',
-                backfaceVisibility: 'hidden',
-              }}
+              className="bg-white text-[#5D4AAF] hover:bg-white/90"
             >
-              Créer un compte
+              Inscription
             </Button>
           </div>
         </div>
