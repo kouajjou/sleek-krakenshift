@@ -13,10 +13,9 @@ export const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-8">
             <img 
-              src="/kraken-logo.svg" 
+              src="/_next/static/images/kraken-logo-BDS-5b36ef70e12e0a05266fabe73dedaa63.png" 
               alt="Kraken Logo" 
               className="h-8 w-auto"
-              style={{ filter: 'brightness(0) invert(1)' }}
             />
             <nav className="hidden lg:flex items-center gap-6">
               <button className="text-white hover:text-white/90 flex items-center gap-1">
