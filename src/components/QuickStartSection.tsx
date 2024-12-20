@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 export const QuickStartSection = () => {
   return (
     <section className="py-16 bg-white">
